@@ -1,0 +1,44 @@
+/* 4.2.4 — Scroll-led introduction. No overlay, timer, video, or scroll lock. */
+.scroll-intro{--intro-progress:0;min-height:100svh;min-height:100dvh;position:relative;overflow:hidden;background:var(--bg);border-bottom:1px solid var(--border);isolation:isolate}
+.scroll-intro::before{content:"";position:absolute;width:min(72vw,650px);height:min(72vw,650px);right:-15%;top:8%;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--orange) 11%,transparent),transparent 68%);pointer-events:none;opacity:calc(1 - var(--intro-progress)*.8)}
+.scroll-intro-content{min-height:100svh;min-height:100dvh;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:1;will-change:transform,opacity;transform:translate3d(0,calc(var(--intro-progress)*-68px),0);opacity:calc(1 - var(--intro-progress)*.93)}
+.scroll-intro-top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:34px}
+.scroll-intro-brand{font:800 27px/1 'Manrope',system-ui,sans-serif;letter-spacing:-.07em;white-space:nowrap}
+.scroll-intro-brand>span{color:var(--orange)}.scroll-intro-brand small{font:800 10px/1.4 'DM Sans',sans-serif;letter-spacing:.13em;color:var(--muted);margin-left:12px}
+.scroll-intro-skip{font-size:12px;font-weight:800;color:var(--muted);border:1px solid var(--border);border-radius:100px;padding:10px 16px;white-space:nowrap}
+.scroll-intro-skip:hover,.scroll-intro-enter:hover{color:var(--orange);border-color:var(--orange)}
+.scroll-intro-center{padding:48px 0 38px;max-width:920px}
+.scroll-intro-greeting{font-size:clamp(13px,1.3vw,16px);color:var(--orange);font-weight:800;letter-spacing:.03em;margin:0 0 21px}
+.scroll-intro h1{font:800 clamp(52px,7.6vw,108px)/1.08 'Manrope',system-ui,sans-serif;letter-spacing:-.075em;margin:0 0 25px;color:var(--text)}
+.scroll-intro h1 em{font-style:normal;color:var(--orange)}
+.scroll-intro-lede{font-size:clamp(15px,1.5vw,19px);line-height:1.7;color:var(--muted);max-width:580px;margin:0 0 29px}
+.scroll-intro-enter{display:inline-flex;gap:25px;align-items:center;font-size:13px;font-weight:800;border-bottom:1px solid var(--border);padding-bottom:10px;transition:color .2s,border-color .2s}
+.scroll-intro-bottom{padding:0 0 35px;display:flex;align-items:center;justify-content:space-between;gap:18px;font-size:10px;font-weight:800;letter-spacing:.12em;color:var(--muted)}
+.scroll-intro-cue{display:flex;align-items:center;gap:12px;color:var(--text)}
+.scroll-cue-track{height:34px;width:22px;border:1px solid var(--border);border-radius:14px;display:flex;justify-content:center;padding-top:7px}
+.scroll-cue-track i{display:block;width:3px;height:8px;border-radius:4px;background:var(--orange);animation:yg-cue 1.9s ease-in-out infinite}
+@keyframes yg-cue{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(8px);opacity:1}}
+.scroll-intro-progress{position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--border)}
+.scroll-intro-progress span{display:block;width:calc(var(--intro-progress)*100%);height:100%;background:var(--orange)}
+/* Subsequent content arrives naturally as the visitor scrolls; never hide content without JS. */
+html.yg-scroll-enhanced .unified-hero .hero-content,html.yg-scroll-enhanced .unified-hero .portrait-wrap{transition:transform .65s cubic-bezier(.2,.8,.2,1),opacity .65s ease;transform:translateY(28px);opacity:.55}
+html.yg-scroll-enhanced .unified-hero.is-visible .hero-content,html.yg-scroll-enhanced .unified-hero.is-visible .portrait-wrap{transform:none;opacity:1}
+html.yg-scroll-enhanced .unified-hero .portrait-wrap{transition-delay:.12s}
+@media(max-width:760px){.scroll-intro-top{padding-top:25px}.scroll-intro-brand{font-size:25px}.scroll-intro-brand small{font-size:9px}.scroll-intro h1{font-size:clamp(45px,9vw,66px)}.scroll-intro-bottom>span:last-child{display:none}.scroll-intro-bottom{padding-bottom:24px}.scroll-intro-center{padding:45px 0}}
+@media(max-width:420px){.scroll-intro-brand small{display:none}.scroll-intro-skip{padding:9px 11px;font-size:11px}.scroll-intro h1{font-size:clamp(42px,11vw,56px)}.scroll-intro-lede{font-size:15px}.scroll-intro-bottom{font-size:9px;letter-spacing:.06em}.scroll-intro-center{padding:24px 0}}
+@media(prefers-reduced-motion:reduce){.scroll-intro-content{transform:none!important;opacity:1!important}.scroll-cue-track i{animation:none}.unified-hero .hero-content,.unified-hero .portrait-wrap{transition:none!important;transform:none!important;opacity:1!important}}
+/* Contain a pre-existing fractional-pixel mobile overflow without clipping sticky navigation. */
+html{overflow-x:clip}
+
+/* 4.2.5: Local-time sky illustration — a small, non-blocking sun/moon visual. */
+.scroll-intro-sky{position:absolute;right:0;top:16%;width:clamp(190px,19vw,285px);aspect-ratio:1;display:grid;place-items:center;pointer-events:none;z-index:0;transform:translate3d(0,calc(var(--intro-progress)*-30px),0);opacity:calc(1 - var(--intro-progress)*.9)}
+.scroll-sky-art{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 12px 36px color-mix(in srgb,var(--orange) 10%,transparent))}
+.sky-orbit,.sky-orbit-inner{fill:none;stroke:var(--border);stroke-width:1.1;stroke-dasharray:3 7;opacity:.7}.sky-orbit-inner{stroke-dasharray:none;opacity:.25}
+.sky-scene{display:none;transform-origin:160px 160px}.scroll-intro[data-period="morning"] .sky-morning,.scroll-intro[data-period="afternoon"] .sky-afternoon,.scroll-intro[data-period="evening"] .sky-evening,.scroll-intro[data-period="night"] .sky-night{display:block}
+.sky-rays{stroke:var(--orange);stroke-width:4;stroke-linecap:round;opacity:.88}.sky-sun{filter:drop-shadow(0 0 18px #ffa44c33)}.sky-horizon{fill:none;stroke:var(--orange);stroke-width:2.5;stroke-linecap:round;opacity:.75}.sky-horizon-sub{fill:none;stroke:var(--orange);stroke-width:1.5;opacity:.35}
+.scroll-sky-label{position:absolute;bottom:3%;font:800 9px/1.4 'DM Sans',system-ui,sans-serif;letter-spacing:.24em;color:var(--muted)}
+@media(min-width:1101px){.scroll-intro-sky{right:1%;top:19%}}
+@media(max-width:1100px){.scroll-intro-sky{width:125px;top:12%;right:3%}.scroll-sky-label{font-size:7px;letter-spacing:.12em;bottom:-2%}}
+@media(max-width:760px){.scroll-intro-sky{width:106px;top:14%;right:4%}.scroll-sky-label{font-size:7px}}
+@media(max-width:420px){.scroll-intro-sky{width:88px;top:12%;right:2%}.scroll-sky-label{font-size:6px;letter-spacing:.08em}}
+@media(prefers-reduced-motion:reduce){.scroll-intro-sky{transform:none!important;opacity:1!important}}

@@ -1,0 +1,50 @@
+/* 4.2.7 — gentle time-aware celestial motion. No JS, video or external assets. */
+/* Animations are contained inside the decorative SVG and never block scrolling. */
+.scroll-intro .scroll-sky-art .sky-scene { transform-box:view-box; transform-origin:160px 160px; }
+.scroll-intro .scroll-sky-art .sky-rays { transform-box:view-box; transform-origin:160px 160px; }
+.scroll-intro[data-period="morning"] .sky-morning .sky-rays {
+  animation:yg427-ray-turn 65s linear infinite;
+}
+.scroll-intro[data-period="morning"] .sky-morning .sky-sun {
+  animation:yg427-morning-sun 7s ease-in-out infinite;
+  transform-box:fill-box;transform-origin:center;
+}
+.scroll-intro[data-period="morning"] .sky-morning .sky-horizon,
+.scroll-intro[data-period="morning"] .sky-morning .sky-horizon-sub {
+  animation:yg427-horizon 6s ease-in-out infinite;
+}
+.scroll-intro[data-period="afternoon"] .sky-afternoon .sky-rays {
+  animation:yg427-ray-turn 85s linear infinite;
+}
+.scroll-intro[data-period="afternoon"] .sky-afternoon .sky-sun {
+  animation:yg427-noon-sun 6s ease-in-out infinite;
+  transform-box:fill-box;transform-origin:center;
+}
+.scroll-intro[data-period="evening"] .sky-evening > circle:first-child {
+  animation:yg427-evening-sun 8s ease-in-out infinite;
+}
+.scroll-intro[data-period="evening"] .sky-evening > path:nth-of-type(2) {
+  animation:yg427-horizon 6s ease-in-out infinite;
+}
+.scroll-intro[data-period="night"] .sky-night > path:first-child {
+  animation:yg427-moon-float 8s ease-in-out infinite;
+}
+.scroll-intro[data-period="night"] .sky-night .sky-star {
+  animation:yg427-stars 4.5s ease-in-out infinite;
+}
+.scroll-intro[data-period="night"] .sky-night .sky-detail:last-child {
+  animation:yg427-stars 6.5s ease-in-out infinite reverse;
+}
+@keyframes yg427-ray-turn {to{transform:rotate(360deg)}}
+@keyframes yg427-morning-sun {0%,100%{transform:translateY(4px) scale(.985);filter:drop-shadow(0 0 10px #ffa44c26)}50%{transform:translateY(-5px) scale(1.025);filter:drop-shadow(0 0 22px #ffa44c66)}}
+@keyframes yg427-noon-sun {0%,100%{transform:scale(1);filter:drop-shadow(0 0 12px #ffa44c30)}50%{transform:scale(1.035);filter:drop-shadow(0 0 25px #ffa44c70)}}
+@keyframes yg427-evening-sun {0%,100%{transform:translateY(-3px)}50%{transform:translateY(4px)}}
+@keyframes yg427-moon-float {0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes yg427-horizon {0%,100%{opacity:.45}50%{opacity:.9}}
+@keyframes yg427-stars {0%,100%{opacity:.38}50%{opacity:1}}
+/* Don't waste motion off-screen or on devices asking for reduced movement. */
+@media (prefers-reduced-motion:reduce) {
+ .scroll-intro .scroll-sky-art .sky-scene *,
+ .scroll-intro .scroll-sky-art .sky-scene,
+ .scroll-intro .scroll-sky-art .sky-rays {animation:none!important;transform:none!important}
+}

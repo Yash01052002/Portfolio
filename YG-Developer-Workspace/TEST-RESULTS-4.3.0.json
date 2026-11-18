@@ -1,0 +1,206 @@
+[
+  {
+    "name": "home 1440 structural",
+    "status": "pass"
+  },
+  {
+    "name": "home 1440 overflow",
+    "status": "pass"
+  },
+  {
+    "name": "home 1440 console",
+    "status": "pass"
+  },
+  {
+    "name": "architecture 1440 click",
+    "status": "pass"
+  },
+  {
+    "name": "architecture 1440 keyboard",
+    "status": "pass"
+  },
+  {
+    "name": "progress 1440",
+    "status": "pass"
+  },
+  {
+    "name": "recruiter 1440",
+    "status": "pass"
+  },
+  {
+    "name": "contact 1440",
+    "status": "pass"
+  },
+  {
+    "name": "home 768 structural",
+    "status": "pass"
+  },
+  {
+    "name": "home 768 overflow",
+    "status": "pass"
+  },
+  {
+    "name": "home 768 console",
+    "status": "pass"
+  },
+  {
+    "name": "architecture 768 click",
+    "status": "pass"
+  },
+  {
+    "name": "architecture 768 keyboard",
+    "status": "pass"
+  },
+  {
+    "name": "progress 768",
+    "status": "pass"
+  },
+  {
+    "name": "recruiter 768",
+    "status": "pass"
+  },
+  {
+    "name": "contact 768",
+    "status": "pass"
+  },
+  {
+    "name": "home 390 structural",
+    "status": "pass"
+  },
+  {
+    "name": "home 390 overflow",
+    "status": "pass"
+  },
+  {
+    "name": "home 390 console",
+    "status": "pass"
+  },
+  {
+    "name": "architecture 390 click",
+    "status": "pass"
+  },
+  {
+    "name": "architecture 390 keyboard",
+    "status": "pass"
+  },
+  {
+    "name": "progress 390",
+    "status": "pass"
+  },
+  {
+    "name": "recruiter 390",
+    "status": "pass"
+  },
+  {
+    "name": "contact 390",
+    "status": "pass"
+  },
+  {
+    "name": "home 320 structural",
+    "status": "pass"
+  },
+  {
+    "name": "home 320 overflow",
+    "status": "pass"
+  },
+  {
+    "name": "home 320 console",
+    "status": "pass"
+  },
+  {
+    "name": "architecture 320 click",
+    "status": "pass"
+  },
+  {
+    "name": "architecture 320 keyboard",
+    "status": "pass"
+  },
+  {
+    "name": "progress 320",
+    "status": "pass"
+  },
+  {
+    "name": "recruiter 320",
+    "status": "pass"
+  },
+  {
+    "name": "contact 320",
+    "status": "pass"
+  },
+  {
+    "name": "blackbox screenshot status",
+    "status": "pass"
+  },
+  {
+    "name": "blackbox video absent honest",
+    "status": "pass"
+  },
+  {
+    "name": "blackbox video load state",
+    "status": "pass"
+  },
+  {
+    "name": "blackbox gallery existing",
+    "status": "pass"
+  },
+  {
+    "name": "blackbox no errors",
+    "status": "pass"
+  },
+  {
+    "name": "blackbox no overflow",
+    "status": "pass"
+  },
+  {
+    "name": "suraksha screenshot status",
+    "status": "pass"
+  },
+  {
+    "name": "suraksha video absent honest",
+    "status": "pass"
+  },
+  {
+    "name": "suraksha video load state",
+    "status": "pass"
+  },
+  {
+    "name": "suraksha gallery existing",
+    "status": "pass"
+  },
+  {
+    "name": "suraksha no errors",
+    "status": "pass"
+  },
+  {
+    "name": "suraksha no overflow",
+    "status": "pass"
+  },
+  {
+    "name": "support-ticket screenshot status",
+    "status": "pass"
+  },
+  {
+    "name": "support-ticket video absent honest",
+    "status": "pass"
+  },
+  {
+    "name": "support-ticket video load state",
+    "status": "pass"
+  },
+  {
+    "name": "support-ticket gallery existing",
+    "status": "pass"
+  },
+  {
+    "name": "support-ticket no errors",
+    "status": "pass"
+  },
+  {
+    "name": "support-ticket no overflow",
+    "status": "pass"
+  },
+  {
+    "name": "reduced motion",
+    "status": "pass"
+  }
+]

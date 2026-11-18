@@ -1,0 +1,37 @@
+/* YG Workspace 3.3 — Cinematic Aurora + Interactive Cyber Grid
+   Atmospheric only: pointer-events:none, behind all content, responsive and reduced-motion safe. */
+:root{--ambient-x:50%;--ambient-y:35%;--ambient-parallax:0px}
+body{background:#0e1014}
+.ambient-scene{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;isolation:isolate;background:radial-gradient(ellipse 90% 75% at 45% 0%,#171b25 0%,#101216 58%,#0e1014 100%)}
+body>header,body>main,body>footer{position:relative;z-index:1}
+body>header{z-index:30}
+.aurora-field{position:absolute;inset:-12%;filter:saturate(1.06);opacity:.92;transform:translate3d(0,var(--ambient-parallax),0)}
+.aurora{position:absolute;border-radius:50%;will-change:transform;mix-blend-mode:screen;pointer-events:none}
+.aurora-amber{width:75vw;height:74vh;min-width:570px;min-height:460px;top:-33vh;left:-24vw;background:radial-gradient(ellipse at 58% 55%,rgba(249,142,44,.20) 0%,rgba(237,124,35,.095) 31%,rgba(249,142,44,.035) 51%,transparent 71%);filter:blur(44px);animation:aurora-drift-a 24s ease-in-out infinite alternate}
+.aurora-teal{width:78vw;height:80vh;min-width:570px;min-height:480px;top:-27vh;right:-30vw;background:radial-gradient(ellipse at 40% 55%,rgba(30,162,178,.14) 0%,rgba(36,122,157,.08) 37%,transparent 69%);filter:blur(50px);animation:aurora-drift-b 30s ease-in-out infinite alternate}
+.aurora-violet{width:80vw;height:76vh;min-width:590px;min-height:450px;top:22vh;left:16vw;background:radial-gradient(ellipse,rgba(92,66,157,.065),rgba(68,59,116,.027) 46%,transparent 69%);filter:blur(70px);animation:aurora-drift-c 37s ease-in-out infinite alternate}
+.aurora-horizon{position:absolute;top:44%;left:-15%;width:130%;height:22%;background:linear-gradient(175deg,transparent 25%,rgba(67,110,122,.035) 45%,rgba(240,147,69,.035) 52%,transparent 68%);transform:rotate(-6deg);filter:blur(40px)}
+@keyframes aurora-drift-a{0%{transform:translate3d(-4%,1%,0) rotate(-10deg) scale(.93)}50%{transform:translate3d(13%,11%,0) rotate(8deg) scale(1.14)}100%{transform:translate3d(23%,0,0) rotate(-3deg) scale(1)}}
+@keyframes aurora-drift-b{0%{transform:translate3d(3%,0,0) rotate(8deg) scale(1)}50%{transform:translate3d(-16%,15%,0) rotate(-7deg) scale(1.18)}100%{transform:translate3d(-23%,-6%,0) rotate(4deg) scale(.94)}}
+@keyframes aurora-drift-c{0%{transform:translate3d(-8%,10%,0) scale(.92)}100%{transform:translate3d(13%,-20%,0) scale(1.13)}}
+.cyber-grid-base{position:absolute;inset:0;opacity:.30;background-image:linear-gradient(rgba(150,175,199,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(150,175,199,.06) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(to bottom,transparent 0%,#000 12%,#000 74%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 12%,#000 74%,transparent 100%)}
+#cyber-grid-canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.82;pointer-events:none}
+.ambient-vignette{position:absolute;inset:0;background:radial-gradient(ellipse 70% 66% at 50% 42%,transparent 37%,rgba(8,10,14,.28) 100%);pointer-events:none}
+/* Keep the new background behind every section without sacrificing legibility. */
+.hero{isolation:isolate}
+.hero-copy:before{content:"";position:absolute;inset:-7% -4% -7% -8%;background:radial-gradient(ellipse at 40% 46%,rgba(12,14,18,.30),transparent 72%);z-index:-1;pointer-events:none}
+.living-hero{background:radial-gradient(ellipse 54% 47% at 51% 45%,#80512518,transparent 76%)}
+.info-ribbon{background:rgba(15,17,21,.24)}
+.ambient-toggle{appearance:none;display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(243,164,72,.35);border-radius:100px;background:rgba(34,37,43,.70);color:#e6b77f;padding:5px 10px;font:700 9px var(--display);letter-spacing:.08em;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+.ambient-toggle:hover{background:rgba(61,46,31,.8);border-color:#f3a448;transform:translateY(-1px)}
+.ambient-toggle:focus-visible{outline:2px solid #f3a448;outline-offset:3px}
+.ambient-scene.is-paused .aurora,.ambient-scene.is-paused .aurora-field{animation-play-state:paused}
+.ambient-scene.is-paused #cyber-grid-canvas{opacity:0}
+.ambient-scene.is-paused .cyber-grid-base{opacity:.2}
+.ambient-toggle[aria-pressed="false"]{color:#9da5ae;border-color:#42464b}
+@media(max-width:850px){.aurora-amber{width:110vw;left:-70vw;top:-22vh;filter:blur(48px)}.aurora-teal{width:110vw;right:-74vw;top:0;filter:blur(52px)}.aurora-violet{opacity:.55}.cyber-grid-base{background-size:54px 54px;opacity:.24}}
+@media(max-width:590px){.ambient-scene{background:#101216}.aurora-field{opacity:.70}.aurora-amber{min-width:420px;min-height:380px;left:-300px;top:-160px}.aurora-teal{min-width:400px;min-height:400px;right:-290px;top:-100px}.aurora-violet{display:none}.cyber-grid-base{background-size:56px 56px;opacity:.18}#cyber-grid-canvas{opacity:.44}.ambient-toggle{padding:5px 9px;font-size:8px}}
+@media(prefers-reduced-motion:reduce){.aurora,.aurora-field{animation:none!important;transform:none!important}.aurora-field{opacity:.65}#cyber-grid-canvas{display:none}.cyber-grid-base{opacity:.17}.ambient-toggle{display:none}}
+/* Prevent transformed off-screen aurora fields from contributing to document width. */
+.ambient-scene{contain:layout paint style}
+html{overflow-x:clip}

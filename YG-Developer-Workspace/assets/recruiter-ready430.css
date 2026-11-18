@@ -1,0 +1,61 @@
+/* YG 4.3.0 — restrained enhancement layer, works without JS */
+:root{--rr-accent:#ffa431;--rr-muted:rgba(255,255,255,.08)}
+html{scroll-padding-top:100px}
+.page-progress{position:fixed;z-index:9999;inset:0 0 auto;height:3px;pointer-events:none;background:transparent}
+.page-progress>span{display:block;width:100%;height:100%;background:linear-gradient(90deg,#f5a32e,#ffd38d);transform:scaleX(0);transform-origin:left center;transition:transform .12s linear}
+.section-rail{position:fixed;right:14px;top:50%;transform:translateY(-50%);z-index:30;display:flex;flex-direction:column;gap:7px;padding:9px 6px;border:1px solid var(--line,rgba(255,255,255,.12));background:var(--surface,#191b1f);border-radius:99px;box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.section-rail a{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--text,#eee);padding:7px;border-radius:24px;min-width:20px;min-height:20px}
+.section-rail a span{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.4;flex-shrink:0}
+.section-rail a em{font-size:10px;font-style:normal;font-weight:700;max-width:0;opacity:0;overflow:hidden;white-space:nowrap;transition:max-width .18s ease,opacity .18s ease}
+.section-rail a:is(:hover,:focus-visible,[aria-current="location"]) em{max-width:100px;opacity:1}
+.section-rail a[aria-current="location"] span{background:var(--orange,#fca12f);opacity:1;box-shadow:0 0 0 3px rgba(255,164,49,.18)}
+.section-rail a:focus-visible{outline:2px solid var(--orange,#fca12f);outline-offset:2px}
+#site-nav a[aria-current="location"]{color:var(--orange,#fca12f)}
+/* Clickable architecture nodes replace duplicate linear tab bar. */
+.architecture-map{display:flex;align-items:stretch;gap:4px;margin:20px 0 12px;min-width:0}
+.architecture-map .arch-node{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;min-height:106px;padding:13px 10px;background:var(--surface-2,rgba(255,255,255,.035));border:1px solid var(--line,rgba(255,255,255,.15));border-radius:13px;color:var(--text,#fff);cursor:pointer;transition:border-color .2s,background .2s,transform .2s}
+.architecture-map .arch-node:hover{transform:translateY(-2px);border-color:var(--orange,#fca12f)}
+.architecture-map .arch-node.is-active{border-color:var(--orange,#fca12f);background:rgba(250,161,47,.10)}
+.architecture-map .arch-num{font-size:10px;font-weight:800;color:var(--orange,#fca12f);letter-spacing:.08em}
+.architecture-map .arch-node strong{font-size:clamp(11px,1vw,15px);line-height:1.3}
+.architecture-map .arch-node small{font-size:10px;color:var(--muted,#999);line-height:1.35}
+.architecture-map .arch-link{display:grid;place-items:center;align-self:center;color:var(--orange,#fca12f);font-weight:800;font-size:14px}
+.arch-helper{font-size:12px;color:var(--muted,#999);margin:0 0 15px}
+/* Project chronology */
+.journey-timeline{padding:0;margin:28px 0 12px;list-style:none;border-top:1px solid var(--line,rgba(255,255,255,.13))}
+.journey-timeline li{display:grid;grid-template-columns:minmax(150px,25%) 1fr;gap:22px;padding:24px 0;border-bottom:1px solid var(--line,rgba(255,255,255,.13));position:relative}
+.journey-date{font-size:12px;letter-spacing:.07em;font-weight:800;color:var(--orange,#fca12f);padding-top:6px}
+.journey-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.journey-top h3{margin:0;font-size:clamp(19px,2vw,27px);color:var(--text,#fff)}
+.journey-content p{color:var(--muted,#aaa);max-width:720px;line-height:1.7;margin:10px 0 13px}
+.journey-content a{color:var(--orange,#fca12f);font-size:13px;font-weight:800;text-decoration:none}
+.journey-content a:hover{text-decoration:underline}
+.journey-state{border:1px solid var(--line,rgba(255,255,255,.14));border-radius:99px;padding:6px 10px;font-size:10px;color:var(--muted,#aaa);white-space:nowrap}
+.journey-wip{border-color:rgba(255,164,49,.35);color:var(--orange,#fca12f)}
+.journey-footnote{font-size:12px;color:var(--muted,#999)}
+/* Contact action */
+.contact-social .contact-copy{appearance:none;border:0;background:transparent;color:inherit;font:inherit;font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:4px;padding:4px 0}
+.contact-social .contact-copy:hover{color:var(--orange,#fca12f)}
+.contact-copy-status{color:var(--muted,#999);font-size:12px;margin-top:9px}
+/* Recruiter brief upgrade */
+.brief-role-tags{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0}
+.brief-role-tags span{border:1px solid var(--line,rgba(255,255,255,.14));border-radius:99px;padding:7px 10px;font-size:11px;color:var(--text,#eee)}
+.brief-evidence{font-size:12px;line-height:1.55;color:var(--muted,#aaa)}
+/* Honest media: existing screenshots + optional video */
+.media-count{color:var(--orange,#fca12f);font-size:12px;margin:7px 0}
+.case-video-panel{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:22px;align-items:center;padding:24px;margin:26px 0;border:1px solid var(--line,rgba(255,255,255,.12));border-radius:18px;background:var(--surface-2,rgba(255,255,255,.025))}
+.case-video-copy h3{font-size:clamp(19px,2.3vw,29px);line-height:1.2;margin:9px 0}
+.case-video-copy p{color:var(--muted,#aaa);line-height:1.6;font-size:13px}
+.case-video-stage{min-width:0;aspect-ratio:16/9;border:1px dashed var(--line,rgba(255,255,255,.18));border-radius:14px;background:var(--surface,#16191c);display:grid;place-items:center;overflow:hidden}
+.case-video-stage video{display:block;width:100%;height:100%;object-fit:contain;background:#000}
+.case-video-stage video[hidden]{display:none}
+.video-empty{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;padding:22px;text-align:center}
+.video-empty>span{display:grid;place-items:center;border-radius:50%;width:46px;height:46px;background:rgba(250,161,47,.11);color:var(--orange,#fca12f)}
+.video-empty strong{color:var(--text,#eee);font-size:14px}
+.video-empty small{color:var(--muted,#aaa);font-size:11px;line-height:1.5;overflow-wrap:anywhere}
+.project-media-link{font-size:12px;color:var(--orange,#fca12f);text-decoration:none}
+@media(max-width:1150px){.section-rail{display:none}.architecture-map{flex-wrap:wrap;gap:8px}.architecture-map .arch-node{flex:1 1 27%;min-height:92px}.architecture-map .arch-link{display:none}}
+@media(max-width:720px){.journey-timeline li{grid-template-columns:1fr;gap:8px;padding:20px 0}.case-video-panel{grid-template-columns:1fr;padding:16px}.architecture-map .arch-node{flex-basis:42%;min-height:88px}.architecture-map .arch-node strong{font-size:13px}.architecture-map .arch-node small{font-size:10px}}
+@media(max-width:360px){.architecture-map .arch-node{flex-basis:100%}}
+@media(prefers-reduced-motion:reduce){.page-progress>span,.section-rail a em,.architecture-map .arch-node{transition:none!important}.architecture-map .arch-node:hover{transform:none}}
+.video-empty[hidden]{display:none!important}

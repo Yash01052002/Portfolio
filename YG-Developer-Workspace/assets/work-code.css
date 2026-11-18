@@ -1,0 +1,11 @@
+/* v3.5 — selected-work generative code atmosphere. No panels, no obstruction. */
+.work-section{position:relative;isolation:isolate}
+.work-section > :not(.work-code-layer){position:relative;z-index:1}
+.work-code-layer{position:absolute;inset:0 -5vw;z-index:0;overflow:hidden;pointer-events:none;opacity:0;transition:opacity .65s ease;contain:paint}
+.work-code-layer.is-active{opacity:1}
+.work-code-layer::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 52% 18% at 72% 8%,rgba(70,168,190,.10),transparent 76%),radial-gradient(ellipse 58% 35% at 12% 44%,rgba(242,151,59,.045),transparent 76%);pointer-events:none}
+#work-code-canvas{display:block;width:100%;height:100%;pointer-events:none;opacity:.96}
+/* Project content retains full contrast and is never covered by the animation. */
+.work-section .feature-panel,.work-section .project-tile{box-shadow:0 20px 50px rgba(4,8,13,.18)}
+@media(max-width:720px){.work-code-layer{inset:0 -10px}.work-code-layer::before{opacity:.55}#work-code-canvas{opacity:.66}}
+@media(prefers-reduced-motion:reduce){.work-code-layer{transition:none;opacity:.34}.work-code-layer.is-active{opacity:.34}}

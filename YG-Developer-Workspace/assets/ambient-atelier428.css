@@ -1,0 +1,44 @@
+/* YG 4.2.8 — restrained time-aware ambient light and editorial About Me. */
+.scroll-intro{--atmo-one:rgba(244,150,76,.13);--atmo-two:rgba(247,193,122,.075);--atmo-line:rgba(245,164,86,.14);background:var(--bg);isolation:isolate}
+.scroll-intro[data-period="morning"]{--atmo-one:rgba(255,168,91,.19);--atmo-two:rgba(255,214,153,.11);--atmo-line:rgba(255,177,104,.16)}
+.scroll-intro[data-period="afternoon"]{--atmo-one:rgba(245,175,72,.16);--atmo-two:rgba(255,218,149,.095);--atmo-line:rgba(245,175,72,.13)}
+.scroll-intro[data-period="evening"]{--atmo-one:rgba(237,123,75,.17);--atmo-two:rgba(157,91,136,.095);--atmo-line:rgba(238,136,86,.17)}
+.scroll-intro[data-period="night"]{--atmo-one:rgba(77,116,170,.14);--atmo-two:rgba(112,143,196,.08);--atmo-line:rgba(140,168,210,.12)}
+html[data-theme="light"] .scroll-intro[data-period="morning"]{--atmo-one:rgba(255,175,100,.20);--atmo-two:rgba(255,217,155,.18);--atmo-line:rgba(207,138,78,.17)}
+html[data-theme="light"] .scroll-intro[data-period="afternoon"]{--atmo-one:rgba(248,198,105,.17);--atmo-two:rgba(250,224,170,.19);--atmo-line:rgba(200,158,81,.16)}
+html[data-theme="light"] .scroll-intro[data-period="evening"]{--atmo-one:rgba(237,146,108,.15);--atmo-two:rgba(194,150,183,.13);--atmo-line:rgba(197,123,107,.17)}
+html[data-theme="light"] .scroll-intro[data-period="night"]{--atmo-one:rgba(136,168,210,.18);--atmo-two:rgba(169,190,225,.14);--atmo-line:rgba(128,152,190,.16)}
+/* Soft, blurred light stays behind text and cannot intercept clicks. */
+.scroll-intro::before{content:"";position:absolute;z-index:0;inset:auto -16% -34% auto;width:min(88vw,940px);height:min(88vw,940px);border-radius:50%;background:radial-gradient(circle,var(--atmo-one) 0%,transparent 66%);opacity:calc(1 - var(--intro-progress)*.78);transform:translate3d(0,0,0);animation:yg428-ambient-drift 25s ease-in-out infinite alternate;pointer-events:none}
+.scroll-intro::after{content:"";position:absolute;z-index:0;left:-22%;top:-37%;width:min(84vw,850px);height:min(84vw,850px);border-radius:50%;background:radial-gradient(circle,var(--atmo-two) 0%,transparent 66%);opacity:calc(1 - var(--intro-progress)*.85);animation:yg428-ambient-drift-reverse 32s ease-in-out infinite alternate;pointer-events:none}
+.welcome-atmosphere{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;opacity:calc(1 - var(--intro-progress)*.9)}
+.welcome-atmosphere::before{content:"";position:absolute;left:10%;right:10%;bottom:8%;height:28%;background:radial-gradient(ellipse at 50% 100%,var(--atmo-two),transparent 68%);filter:blur(30px);animation:yg428-breathe 20s ease-in-out infinite alternate}
+.welcome-atmosphere::after{content:"";position:absolute;left:0;right:0;bottom:14%;height:1px;background:linear-gradient(90deg,transparent,var(--atmo-line),transparent);opacity:.65}
+.atmo-horizon{position:absolute;left:12%;right:12%;bottom:13%;height:1px;background:linear-gradient(90deg,transparent,var(--atmo-line),transparent);opacity:.22}
+.scroll-intro-content{z-index:1}
+.scroll-intro-sky{z-index:0}
+@keyframes yg428-ambient-drift{from{transform:translate3d(-3%,3%,0) scale(.94)}to{transform:translate3d(5%,-4%,0) scale(1.08)}}
+@keyframes yg428-ambient-drift-reverse{from{transform:translate3d(4%,-2%,0) scale(1.04)}to{transform:translate3d(-5%,5%,0) scale(.92)}}
+@keyframes yg428-breathe{from{opacity:.35;transform:scale(.95)}to{opacity:.75;transform:scale(1.07)}}
+/* Screenshot-inspired About section: strong type, real portrait, warm accent, open whitespace. */
+.about-section{background:var(--bg);border-block:1px solid var(--border)}
+.about-atelier-heading{margin-bottom:36px}
+.about-atelier-heading .kicker{margin-bottom:14px}
+.about-atelier-heading h2{font:800 clamp(38px,5.2vw,68px)/1.12 'Manrope',system-ui,sans-serif;letter-spacing:-.065em;margin:0;color:var(--text)}
+.about-atelier-heading h2 span{color:var(--orange)}
+.about-atelier-grid{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:clamp(30px,4.5vw,68px);align-items:center}
+.about-atelier-photo{position:relative;overflow:hidden;border-radius:22px;aspect-ratio:.96;background:#090a0b;align-self:start}
+.about-atelier-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 17%;filter:saturate(.9)}
+.about-atelier-stamp{position:absolute;bottom:22px;left:22px;color:#fff;font:800 clamp(19px,2vw,28px)/1.04 'Manrope',sans-serif;letter-spacing:-.04em;white-space:pre-line;text-shadow:0 2px 12px #0009}
+.about-atelier-copy{min-width:0}
+.about-atelier-lead{font:700 clamp(21px,2.5vw,31px)/1.45 'Manrope',sans-serif;letter-spacing:-.04em;color:var(--text);margin:0 0 22px}
+.about-atelier-lead strong{color:var(--orange);font-weight:800}
+.about-atelier-body{font-size:clamp(13px,1.16vw,15px);line-height:1.85;color:var(--muted);margin:0 0 17px}
+.about-atelier-actions{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-top:28px}
+.about-atelier-contact{font-size:13px;font-weight:800;border-bottom:1px solid transparent;padding:10px 0}
+.about-atelier-contact:hover{color:var(--orange);border-bottom-color:var(--orange)}
+.about-atelier-location{font-size:12px;color:var(--muted);margin:20px 0 0}
+@media(max-width:850px){.about-atelier-grid{gap:26px}.about-atelier-lead{font-size:clamp(19px,3vw,26px)}.about-atelier-photo{aspect-ratio:.85}}
+@media(max-width:700px){.about-atelier-grid{grid-template-columns:1fr;gap:26px}.about-atelier-photo{width:min(100%,410px);aspect-ratio:1.08}.about-atelier-heading{margin-bottom:24px}.about-atelier-actions{margin-top:22px}.scroll-intro::before{width:110vw;height:110vw;right:-40%;bottom:-15%}.scroll-intro::after{width:100vw;height:100vw;left:-48%;top:-14%}}
+@media(max-width:420px){.about-atelier-heading h2{font-size:clamp(35px,9.4vw,46px)}.about-atelier-photo{aspect-ratio:1.03}.about-atelier-stamp{bottom:14px;left:16px}.about-atelier-actions{gap:15px}.about-atelier-actions .button{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.scroll-intro::before,.scroll-intro::after,.welcome-atmosphere::before{animation:none!important;transform:none!important}.scroll-intro::before,.scroll-intro::after,.welcome-atmosphere{opacity:.65!important}}

@@ -1,0 +1,17 @@
+/* YG 4.0 case-study visual alignment, without removing original functionality */
+:root{--bg:#111316;--surface:#1b1e22;--surface2:#22262a;--surface3:#292d31;--border:#34383d;--text:#f7f6f3;--muted:#aaaeb4;--accent:#ffa348;--accent2:#ffc16c;--font:'DM Sans',system-ui,sans-serif;--display:'Manrope',system-ui,sans-serif}
+:root[data-theme="light"]{--bg:#faf9f6;--surface:#fff;--surface2:#f2f0eb;--surface3:#eae7e1;--border:#e6e3dd;--text:#17191b;--muted:#64686c;--accent:#ed7926;--accent2:#ed7926;color-scheme:light}
+:root[data-theme="dark"]{color-scheme:dark}
+.ambient-scene{display:none!important}body{background:var(--bg)!important;color:var(--text)!important}body::before{display:none!important}
+.case-header{min-height:100px}.case-hero{padding-top:45px}.case-hero h1,.case-body h2,.case-body h3{letter-spacing:-.045em}.case-art{border-radius:18px}.case-gallery{background:var(--surface);border-color:var(--border);color:var(--text)}.gallery-header h2,.gallery-title{color:var(--text)}.gallery-header>p,.gallery-caption,.gallery-honesty{color:var(--muted)}.gallery-card{background:var(--surface2);border-color:var(--border);color:var(--text)}.case-header,.site-footer{border-color:var(--border)}
+.case-theme-toggle{border:1px solid var(--border);border-radius:100px;background:var(--surface);color:var(--text);padding:10px 14px;font-weight:700;font-size:12px;margin-left:auto;white-space:nowrap}.case-theme-toggle:hover{border-color:var(--accent)}
+.debug-challenge{margin:35px 0 75px}
+@media(max-width:650px){.case-header{min-height:80px;gap:12px}.case-theme-toggle{padding:8px 10px;font-size:11px}.case-gallery{background:var(--surface)}}
+/* Explicitly replace legacy hardcoded dark-only text and cards in light mode */
+.case-hero>p,.case-copy p,.case-copy li,.back,.site-footer p,.site-footer>div a,.case-next p{color:var(--muted)!important}
+.button-outline{color:var(--text)!important;border-color:var(--border)!important;background:var(--surface)!important}
+.case-meta-grid>div{background:var(--surface)!important;border-color:var(--border)!important}
+.case-meta-grid span{color:var(--muted)!important}.case-meta-grid strong{color:var(--text)!important}
+.case-copy .note{background:var(--surface2)!important;color:var(--muted)!important}
+.case-next{border-color:var(--border)!important}
+.case-art .diag-title,.case-art .diag-code{color:#dce3ea}
