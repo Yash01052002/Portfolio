@@ -1,0 +1,21 @@
+/* 4.2.9: one portrait, one detailed About Me; first section is a brief introduction. */
+.unified-hero{align-items:center;gap:clamp(28px,5vw,80px)}
+.hero-overview{position:relative;isolation:isolate;width:100%;max-width:420px;min-height:370px;margin-left:auto;border:1px solid var(--border);border-radius:24px;padding:clamp(24px,3vw,36px);background:var(--surface);box-shadow:var(--shadow);overflow:hidden}
+.hero-overview::before{content:"";position:absolute;inset:-45% -35% auto auto;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--orange) 14%,transparent),transparent 70%);pointer-events:none;z-index:-1}
+.hero-overview-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.hero-overview-label{color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.15em}
+.hero-overview-mark{color:var(--orange);font-size:28px;line-height:1}
+.hero-overview-title{font:800 clamp(26px,2.7vw,37px)/1.18 'Manrope',system-ui,sans-serif;letter-spacing:-.055em;margin:17px 0 25px;color:var(--text)}
+.hero-overview-title span{color:var(--orange)}
+.hero-overview-path{position:relative;display:grid;gap:10px}
+.hero-overview-path::before{content:"";position:absolute;left:17px;top:24px;bottom:24px;width:1px;background:var(--border);z-index:0}
+.hero-overview-step{display:flex;align-items:center;gap:15px;padding:12px 14px;border:1px solid var(--border);background:var(--bg);border-radius:12px;position:relative;z-index:1}
+.hero-step-index{width:35px;height:35px;border-radius:9px;display:grid;place-items:center;background:var(--soft);color:var(--orange);font-size:11px;font-weight:800;flex:none}
+.hero-overview-step>div{display:grid;gap:3px;flex:1;min-width:0}
+.hero-overview-step strong{font-size:14px;color:var(--text);font-weight:800}
+.hero-overview-step small{font-size:11px;color:var(--muted)}
+.hero-step-symbol{font-size:17px;color:var(--orange);font-weight:800}
+.hero-overview-foot{color:var(--muted);font-size:11px;margin:19px 0 0;letter-spacing:.015em}
+@media(max-width:760px){.hero-overview{margin:0;max-width:100%;min-height:0;padding:23px}.hero-overview-title{margin:12px 0 20px}.unified-hero{gap:26px}}
+@media(max-width:420px){.hero-overview{padding:18px;border-radius:18px}.hero-overview-title{font-size:28px}.hero-overview-step{padding:10px}.hero-overview-foot{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.hero-overview,.hero-overview *{animation:none!important;transition:none!important}}

@@ -1,0 +1,187 @@
+{
+  "total": 45,
+  "passed": 45,
+  "failed": [],
+  "checks": [
+    {
+      "test": "1440px page renders",
+      "pass": true
+    },
+    {
+      "test": "1440px exactly 3 GitHub icons",
+      "pass": true
+    },
+    {
+      "test": "1440px BlackBox link",
+      "pass": true
+    },
+    {
+      "test": "1440px BlackBox icon visible",
+      "pass": true
+    },
+    {
+      "test": "1440px Suraksha link",
+      "pass": true
+    },
+    {
+      "test": "1440px Suraksha icon visible",
+      "pass": true
+    },
+    {
+      "test": "1440px Support Ticket System link",
+      "pass": true
+    },
+    {
+      "test": "1440px Support Ticket System icon visible",
+      "pass": true
+    },
+    {
+      "test": "1440px no horizontal overflow",
+      "pass": true
+    },
+    {
+      "test": "1440px no JS errors",
+      "pass": true
+    },
+    {
+      "test": "1440px icon CSS loaded",
+      "pass": true
+    },
+    {
+      "test": "light theme icon readable",
+      "pass": true
+    },
+    {
+      "test": "768px page renders",
+      "pass": true
+    },
+    {
+      "test": "768px exactly 3 GitHub icons",
+      "pass": true
+    },
+    {
+      "test": "768px BlackBox link",
+      "pass": true
+    },
+    {
+      "test": "768px BlackBox icon visible",
+      "pass": true
+    },
+    {
+      "test": "768px Suraksha link",
+      "pass": true
+    },
+    {
+      "test": "768px Suraksha icon visible",
+      "pass": true
+    },
+    {
+      "test": "768px Support Ticket System link",
+      "pass": true
+    },
+    {
+      "test": "768px Support Ticket System icon visible",
+      "pass": true
+    },
+    {
+      "test": "768px no horizontal overflow",
+      "pass": true
+    },
+    {
+      "test": "768px no JS errors",
+      "pass": true
+    },
+    {
+      "test": "768px icon CSS loaded",
+      "pass": true
+    },
+    {
+      "test": "390px page renders",
+      "pass": true
+    },
+    {
+      "test": "390px exactly 3 GitHub icons",
+      "pass": true
+    },
+    {
+      "test": "390px BlackBox link",
+      "pass": true
+    },
+    {
+      "test": "390px BlackBox icon visible",
+      "pass": true
+    },
+    {
+      "test": "390px Suraksha link",
+      "pass": true
+    },
+    {
+      "test": "390px Suraksha icon visible",
+      "pass": true
+    },
+    {
+      "test": "390px Support Ticket System link",
+      "pass": true
+    },
+    {
+      "test": "390px Support Ticket System icon visible",
+      "pass": true
+    },
+    {
+      "test": "390px no horizontal overflow",
+      "pass": true
+    },
+    {
+      "test": "390px no JS errors",
+      "pass": true
+    },
+    {
+      "test": "390px icon CSS loaded",
+      "pass": true
+    },
+    {
+      "test": "320px page renders",
+      "pass": true
+    },
+    {
+      "test": "320px exactly 3 GitHub icons",
+      "pass": true
+    },
+    {
+      "test": "320px BlackBox link",
+      "pass": true
+    },
+    {
+      "test": "320px BlackBox icon visible",
+      "pass": true
+    },
+    {
+      "test": "320px Suraksha link",
+      "pass": true
+    },
+    {
+      "test": "320px Suraksha icon visible",
+      "pass": true
+    },
+    {
+      "test": "320px Support Ticket System link",
+      "pass": true
+    },
+    {
+      "test": "320px Support Ticket System icon visible",
+      "pass": true
+    },
+    {
+      "test": "320px no horizontal overflow",
+      "pass": true
+    },
+    {
+      "test": "320px no JS errors",
+      "pass": true
+    },
+    {
+      "test": "320px icon CSS loaded",
+      "pass": true
+    }
+  ]
+}
